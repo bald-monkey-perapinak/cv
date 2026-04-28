@@ -413,6 +413,18 @@ body {
   .section-title--extra-top {
     margin-top: 20px;  /* адаптировано для одной страницы */
   }
+  /* Запрещаем разрыв после заголовка "Опыт и проекты",
+   чтобы он не остался в одиночестве на левой половине */
+.section-title--extra-top {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* Запрещаем разрыв перед блоком с карточками проектов */
+.exp-grid {
+  break-before: avoid;
+  page-break-before: avoid;
+}
 }
 </style>
 </head>
