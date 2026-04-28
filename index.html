@@ -403,6 +403,17 @@ body {
     margin-top: 6px;
   }
 }
+  /* Отдельный отступ перед разделом "Опыт и проекты" на экране */
+.section-title--extra-top {
+  margin-top: 32px;   /* отступ на экране — можно увеличить при желании */
+}
+
+/* В печатной версии тоже добавим отступ, но поменьше */
+@media print {
+  .section-title--extra-top {
+    margin-top: 20px;  /* адаптировано для одной страницы */
+  }
+}
 </style>
 </head>
 <body>
@@ -511,7 +522,8 @@ body {
   </div>
 
   <!-- ОПЫТ И ПРОЕКТЫ -->
-  <div class="section-title section-gap">Опыт и проекты</div>
+ 
+  <div class="section-title section-gap section-title--extra-top">Опыт и проекты</div>
   <div class="exp-grid">
 
     <!-- MIR -->
