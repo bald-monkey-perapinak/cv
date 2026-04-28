@@ -264,6 +264,39 @@ body {
 .education-note strong {
   color: #2020E8;
 }
+  @media print {
+  @page {
+    size: A4;
+    margin: 12mm 15mm; /* отступы по вкусу */
+  }
+
+  body {
+    background: white;
+    padding: 0 !important;
+    display: block;
+    min-height: auto;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 5mm; /* небольшой внутренний отступ */
+    background: white;
+  }
+
+  /* Заставим печатать фон (работает не во всех конвертерах) */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Управление разрывами, чтобы блоки не рвались пополам */
+  .header, .goal-block, .card, .card-gray, .exp-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
 </style>
 </head>
 <body>
