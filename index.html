@@ -265,36 +265,147 @@ body {
   color: #2020E8;
 }
   @media print {
+  /* --- Базовые настройки листа --- */
   @page {
     size: A4;
-    margin: 12mm 15mm; /* отступы по вкусу */
+    margin: 8mm 10mm;      /* минимальные поля, чтобы влезло больше контента */
   }
 
   body {
-    background: white;
     padding: 0 !important;
+    background: white;
     display: block;
-    min-height: auto;
   }
 
   .page {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 0 5mm; /* небольшой внутренний отступ */
+    padding: 0;
     background: white;
   }
 
-  /* Заставим печатать фон (работает не во всех конвертерах) */
+  /* --- Фоны --- */
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  /* Управление разрывами, чтобы блоки не рвались пополам */
-  .header, .goal-block, .card, .card-gray, .exp-block {
+  /* --- Управление разрывами --- */
+  .section-title,
+  .goal-block,
+  .card,
+  .card-gray,
+  .exp-block {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  /* --- Глобальное уменьшение размеров и отступов --- */
+  .name {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .position {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .contacts {
+    gap: 2px;
+  }
+  .contact-item {
+    font-size: 11px;
+  }
+
+  .section-title {
+    font-size: 16px;
+    margin-bottom: 6px;
+    letter-spacing: 0;
+  }
+
+  .goal-block {
+    padding: 12px 16px;
+    margin-bottom: 14px;
+  }
+  .goal-text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  /* Карточки (стек, образование) */
+  .card,
+  .card-gray {
+    padding: 12px 16px;
+    margin-bottom: 14px;
+  }
+  .card-list li {
+    font-size: 12px;
+    gap: 8px;
+  }
+  .card-list li::before {
+    width: 7px;
+    height: 7px;
+    margin-top: 3px;
+  }
+
+  /* Плашки технологий */
+  .pills {
+    gap: 5px;
+    margin-top: 4px;
+  }
+  .pill {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  /* --- Блоки опыта (общие) --- */
+  .exp-block {
+    padding: 12px 14px;
+    margin-bottom: 0;       /* отступы теперь управляются гридом */
+  }
+  .exp-title {
+    font-size: 14px;
+  }
+  .exp-sub {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+  .exp-list li {
+    font-size: 11px;
+    gap: 6px;
+    line-height: 1.4;
+  }
+  .exp-list li::before {
+    width: 6px;
+    height: 6px;
+    margin-top: 3px;
+  }
+  .skills-tag {
+    font-size: 10px;
+    margin-top: 8px;
+    padding-top: 6px;
+  }
+
+  /* --- Двухколоночная сетка для опыта --- */
+  .exp-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .exp-grid .exp-block {
+    flex: 1 1 calc(50% - 5px);  /* по два в ряд */
+    min-width: 0;                /* чтобы не вылезало за контейнер */
+  }
+
+  /* --- Образовательный блок чуть компактнее --- */
+  .education-note {
+    font-size: 11px;
+    padding: 8px 12px;
+    margin-top: 6px;
   }
 }
 </style>
