@@ -144,20 +144,6 @@ body {
   margin-top: 4px;
 }
 
-/* GRAY CARD */
-.card-gray {
-  background: #D8D8DE;
-  border-radius: 20px;
-  padding: 26px 30px;
-  margin-bottom: 28px;
-}
-.card-gray .card-list li {
-  color: #0D0D0D;
-}
-.card-gray .card-list li::before {
-  background: #2020E8;
-}
-
 /* EXPERIENCE BLOCK */
 .exp-block {
   background: #2020E8;
@@ -216,19 +202,6 @@ body {
   border-radius: 2px;
   opacity: 0.8;
 }
-.skills-tag {
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: 0.2px;
-}
-.skills-tag strong {
-  font-weight: 700;
-  color: #fff;
-}
 
 /* GOAL BLOCK */
 .goal-block {
@@ -246,9 +219,6 @@ body {
 .goal-text strong {
   color: #2020E8;
   font-weight: 700;
-}
-.goal-text + .goal-text {
-  margin-top: 14px;
 }
 
 /* SKILLS PILLS */
@@ -269,25 +239,13 @@ body {
 .section-gap {
   margin-bottom: 6px;
 }
-.education-note {
-  margin-top: 12px;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #0D0D0D;
-  background: #ECECF0;
-  border-radius: 14px;
-  padding: 14px 18px;
-}
-.education-note strong {
-  color: #2020E8;
-}
 .exp-fullwidth {
   flex-basis: 100%;
   margin-bottom: 12px;
   margin-top: 24px;
 }
 
-/* ===== ПЕЧАТЬ — 2 СТРАНИЦЫ A4 ===== */
+/* ===== ПЕЧАТЬ — 1–2 СТРАНИЦЫ A4 ===== */
 @media print {
   @page {
     size: A4;
@@ -319,7 +277,6 @@ body {
   .exp-subtitle,
   .exp-title,
   .exp-sub,
-  .skills-tag,
   .pills,
   .pill,
   .photo-wrap,
@@ -338,7 +295,6 @@ body {
   }
   .goal-block,
   .card,
-  .card-gray,
   .exp-grid {
     break-inside: auto;
     page-break-inside: auto;
@@ -348,69 +304,64 @@ body {
     page-break-inside: avoid;
   }
 
-  .header { gap: 18px; margin-bottom: 14px; }
+  .header { gap: 18px; margin-bottom: 12px; }
   .photo-wrap {
-    width: 95px;
-    height: 120px;
-    border-radius: 12px;
+    width: 90px;
+    height: 115px;
+    border-radius: 10px;
     box-shadow: none;
-    background: #C0C0C8;
   }
   .header-text { padding-top: 2px; }
-  .name { font-size: 22px; margin-bottom: 3px; letter-spacing: -0.3px; }
-  .position { font-size: 12.5px; margin-bottom: 7px; }
+  .name { font-size: 21px; margin-bottom: 3px; letter-spacing: -0.3px; }
+  .position { font-size: 12px; margin-bottom: 6px; }
   .contacts { gap: 2px; }
-  .contact-item { font-size: 10.5px; }
+  .contact-item { font-size: 10px; }
 
-  .section-title { font-size: 15px; margin-bottom: 6px; letter-spacing: 0; }
+  .section-title { font-size: 14px; margin-bottom: 5px; letter-spacing: 0; }
 
-  .goal-block { padding: 10px 14px; margin-bottom: 10px; }
-  .goal-text { font-size: 11px; line-height: 1.42; }
-  .goal-text + .goal-text { margin-top: 6px; }
+  .goal-block { padding: 9px 12px; margin-bottom: 8px; }
+  .goal-text { font-size: 10.5px; line-height: 1.38; }
 
-  .card, .card-gray { padding: 10px 14px; margin-bottom: 10px; }
-  .card-list { gap: 8px; }
-  .card-list li { font-size: 11px; gap: 8px; }
+  .card { padding: 9px 12px; margin-bottom: 8px; }
+  .card-list { gap: 6px; }
+  .card-list li { font-size: 10.5px; gap: 7px; }
   .card-list li::before { width: 6px; height: 6px; min-width: 6px; margin-top: 4px; }
-  .list-text strong { margin-bottom: 3px; }
-  .pills { gap: 4px; margin-top: 4px; }
-  .pill { font-size: 9px; padding: 2px 7px; border-radius: 5px; }
+  .list-text strong { margin-bottom: 2px; }
+  .pills { gap: 4px; margin-top: 3px; }
+  .pill { font-size: 9px; padding: 2px 6px; border-radius: 5px; }
 
   .exp-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     margin-top: 4px;
   }
   .exp-grid .exp-block {
     flex: 1 1 calc(50% - 4px);
     min-width: 0;
-    padding: 10px 12px;
+    padding: 9px 11px;
     margin-bottom: 0;
-    border-radius: 14px;
+    border-radius: 12px;
   }
   .exp-fullwidth {
     flex-basis: 100%;
     margin-top: 4px;
-    margin-bottom: 6px;
-    font-size: 15px;
-  }
-  .exp-title { font-size: 12.5px; margin-bottom: 2px; }
-  .exp-sub { font-size: 9.5px; margin-bottom: 7px; }
-  .exp-subtitle {
-    font-size: 10.5px;
-    margin-top: 8px;
     margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .exp-title { font-size: 12px; margin-bottom: 2px; }
+  .exp-sub { font-size: 9px; margin-bottom: 6px; }
+  .exp-subtitle {
+    font-size: 10px;
+    margin-top: 7px;
+    margin-bottom: 4px;
     padding-bottom: 3px;
   }
   .exp-subtitle:first-child { margin-top: 0; }
-  .exp-list { gap: 5px; }
-  .exp-list li { font-size: 10px; line-height: 1.38; padding-left: 13px; }
-  .exp-list li::before { width: 5px; height: 5px; top: 4px; }
-  .skills-tag { font-size: 9.5px; margin-top: 6px; padding-top: 5px; }
-
-  .education-note { font-size: 10px; padding: 7px 10px; margin-top: 5px; }
+  .exp-list { gap: 4px; }
+  .exp-list li { font-size: 9.5px; line-height: 1.35; padding-left: 12px; }
+  .exp-list li::before { width: 4.5px; height: 4.5px; top: 4px; }
 }
 </style>
 </head>
@@ -421,6 +372,7 @@ body {
   <div class="header">
     <div class="photo-wrap">
           <div class="photo-wrap"><img src="data:image/jpeg;base64,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" alt="Никита Жуков"></div>
+
     </div>
     <div class="header-text">
       <div class="name">Жуков Никита<br>Андреевич</div>
@@ -441,7 +393,7 @@ body {
   <div class="section-title section-gap">О себе</div>
   <div class="goal-block">
     <div class="goal-text">
-      Студент ИТМО («Инженерия искусственного интеллекта»), 1.5 года практики в ML/LLM. В <strong>Т-Банке</strong> строил LLM-пайплайны для персонализации пуш-уведомлений и агентную систему извлечения данных по стратегическим партнёрам: от feature engineering и валидации LLM-judges до A/B-тестов на 500k пользователей. Ищу позицию DS/ML/NLP-инженера с фокусом на классический ML и NLP.
+      Студент ИТМО («Инженерия искусственного интеллекта»), 1.5 года практики в ML и LLM. В <strong>Т-Банке</strong> строил пайплайны персонализации пуш-уведомлений и агентную систему извлечения данных по стратегическим партнёрам: от конструирования признаков и валидации LLM-оценщиков до A/B-тестов на 500k пользователей. Ищу позицию DS/ML/NLP-инженера.
     </div>
   </div>
 
@@ -458,7 +410,6 @@ body {
               <span class="pill">SQL</span>
               <span class="pill">pandas</span>
               <span class="pill">numpy</span>
-              <span class="pill">seaborn</span>
               <span class="pill">PostgreSQL</span>
               <span class="pill">Redis</span>
             </div>
@@ -467,14 +418,13 @@ body {
       </li>
       <li>
         <div class="list-text">
-          <strong>ML / DL библиотеки</strong>
+          <strong>ML и DL</strong>
           <span class="list-desc">
             <div class="pills">
               <span class="pill">scikit-learn</span>
               <span class="pill">CatBoost</span>
               <span class="pill">LightGBM</span>
               <span class="pill">PyTorch</span>
-              <span class="pill">imbalanced-learn</span>
               <span class="pill">Optuna</span>
             </div>
           </span>
@@ -482,28 +432,25 @@ body {
       </li>
       <li>
         <div class="list-text">
-          <strong>NLP / LLM-инструменты</strong>
+          <strong>NLP и LLM</strong>
           <span class="list-desc">
             <div class="pills">
               <span class="pill">spaCy</span>
               <span class="pill">sentence-transformers</span>
-              <span class="pill">pydantic</span>
               <span class="pill">LangChain</span>
               <span class="pill">LangGraph</span>
-              <span class="pill">Langfuse</span>
             </div>
           </span>
         </div>
       </li>
       <li>
         <div class="list-text">
-          <strong>Инфраструктура и инструменты</strong>
+          <strong>Инфраструктура</strong>
           <span class="list-desc">
             <div class="pills">
               <span class="pill">Git</span>
               <span class="pill">Docker</span>
               <span class="pill">FastAPI</span>
-              <span class="pill">REST API</span>
             </div>
           </span>
         </div>
@@ -522,33 +469,33 @@ body {
 
       <div class="exp-subtitle">Персонализация пуш-уведомлений</div>
       <ul class="exp-list">
-        <li>Сегментировал пользователей K-means (scikit-learn) по 12 транзакционным и поведенческим признакам: MCC-коды агрегировал в смысловые категории (спорт, аптеки, путешествия, предпринимательство), суммы логарифмировал, категориальные кодировал One-Hot. Число кластеров (k=7) выбирал по elbow-методу и silhouette-анализу, финально — по бизнес-интерпретируемости сегментов: это дало понятные маркетингу портреты и легло в основу персонализированных кампаний.</li>
-        <li>Построил генератор пуш-текстов на GPT-4o-mini: few-shot примеры и chain-of-thought в промпте, структурированный вывод через pydantic-схему — так гарантировал валидный JSON и убрал постобработку регулярками. Каскад LLM-judges оценивал каждый пуш по 4 критериям (CTA, длина, логичность, соответствие ТЗ), каждый судья возвращал JSON с оценкой и кратким обоснованием; итоговый скор — взвешенная сумма с весами под бизнес-приоритеты, где наличие CTA весило выше стилистики.</li>
-        <li>Провалидировал судей через 5-fold кросс-валидацию на 200 пушах, размеченных живыми редакторами: agreement 70%, confusion matrix позволила откалибровать пороги по каждому критерию и убрать избыточные судьи — только после этого доверил каскаду автоматическую фильтрацию без ручной проверки каждого сообщения.</li>
-        <li>Итеративно улучшал промпт и параметры декодирования (temperature, top-p) по кросс-валидации, добиваясь наличия минимум одного «идеального» пуша из 10 сгенерированных вариантов.</li>
-        <li>Раскатал A/B-тест на 500 тыс. пользователей (3 недели, случайное разбиение): статистически значимый рост CTR на 10% относительно контрольной группы; эффект воспроизвёлся на holdout-периоде.</li>
+        <li>Сегментировал пользователей кластеризацией по транзакционным и поведенческим признакам: коды покупок агрегировал в смысловые категории, суммы логарифмировал, категориальные кодировал. Число кластеров выбирал по внутренним метрикам и бизнес-интерпретируемости — сегменты легли в основу персонализированных кампаний.</li>
+        <li>Построил генератор пуш-текстов: примеры и пошаговые рассуждения в промпте, структурированный вывод по схеме — это дало валидный JSON без ручной постобработки. Каскад LLM-оценщиков проверял каждый пуш по критериям (призыв к действию, длина, логичность, соответствие задания); итоговый балл — взвешенная сумма под бизнес-приоритеты.</li>
+        <li>Провалидировал оценщиков кросс-валидацией на пушах, размеченных живыми редакторами (согласие 70%): матрица ошибок позволила откалибровать пороги и убрать избыточные критерии — только после этого доверил каскаду автоматическую фильтрацию.</li>
+        <li>Улучшал промпт и параметры генерации по кросс-валидации, добиваясь минимум одного «идеального» пуша из десяти.</li>
+        <li>Раскатал A/B-тест на 500 тыс. пользователей (3 недели): значимый рост кликабельности на 10%; эффект воспроизвёлся на отложенном периоде.</li>
       </ul>
 
       <div class="exp-subtitle">Дайджест по стратегическим партнёрам</div>
       <ul class="exp-list">
-        <li>Спроектировал агентную систему для менеджеров коммерции: извлечение и агрегация данных о взаимодействии с внешними заказчиками из почты, Telegram и транскриптов созвонов в единую модель данных (PostgreSQL).</li>
-        <li>Извлечение сущностей из неструктурированной переписки построил на двухуровневом пайплайне: spaCy (ru_core_news_lg) для быстрого NER + regex для структурированных паттернов (даты, суммы, юр. лица); на спорных фрагментах — LLM с function calling и structured output по pydantic-схеме. Схлопывание дублей и разных написаний одной сущности (Lamoda / Lamoda Group / ЛаМода) — через эмбеддинги sentence-transformers и пороговое косинусное сходство: это убрало ручную чистку и дало консистентную модель данных.</li>
-        <li>Проблему несистемности ведения документации решал каскадом судей, которые отбирают сущности по контексту (компания, роль, стадия сделки) и отсекают шум. Агрегация — через каждодневный апрув в боте и еженедельный дайджест.</li>
-        <li>Сократил время менеджеров на ведение документации на 4 часа в неделю; верхнеуровневые руководители получают сжатый контекст по каждому проекту без ручного анализа источников.</li>
+        <li>Спроектировал агентную систему для менеджеров коммерции: сбор данных о взаимодействии с заказчиками из почты, мессенджеров и расшифровок созвонов в единую модель данных.</li>
+        <li>Извлечение сущностей из неструктурированной переписки построил на двухуровневом пайплайне: лёгкая модель распознавания именованных сущностей и регулярные выражения для структурированных паттернов (даты, суммы, юр. лица), на спорных фрагментах — языковая модель со структурированным выводом. Сведение дублей и разных написаний одной компании — по векторным представлениям и порогу схожести: это убрало ручную чистку и дало консистентную модель данных.</li>
+        <li>Проблему несистемности ведения документации решал каскадом оценщиков, отбирающих сущности по контексту и отсекающих шум; агрегация — через ежедневный апрув в боте и недельный дайджест.</li>
+        <li>Сократил время менеджеров на ведение документации на 4 часа в неделю; руководители получают сжатый контекст по каждому проекту без ручного анализа источников.</li>
       </ul>
     </div>
 
     <!-- Клиника Скандинавия -->
     <div class="exp-block">
-      <div class="exp-title">Клиника Скандинавия — Product Manager (AI-агент)</div>
-      <div class="exp-sub">AI-агент сбора анамнеза до приёма · август 2025 — апрель 2026</div>
+      <div class="exp-title">Клиника Скандинавия — Product Manager</div>
+      <div class="exp-sub">Агент сбора анамнеза до приёма · август 2025 — апрель 2026</div>
       <ul class="exp-list">
-        <li>Проанализировал российский и зарубежный рынок агентов сбора анамнеза и на основе этого сформировал скоуп MVP: отсёк фичи, не критичные для запуска, оставил то, что реально влияло на результат.</li>
-        <li>Спроектировал архитектуру веб-сервиса совместно с разработчиками (UML, C4), формализовал функциональные и нефункциональные требования для команды разработки.</li>
-        <li>Занимался промптингом LLM-агента сбора анамнеза: chain-of-thought сценарий диалога, few-shot примеры по нозологиям, валидация медицинских терминов через справочник МКБ-10. Это сократило время ответа модели и повысило точность и релевантность собираемой информации.</li>
-        <li>Прогонял A/B-тесты на пользователях в разных сценариях и на разных моделях (GigaChat, YandexGPT), чтобы выбрать рабочую конфигурацию перед раскаткой.</li>
-        <li>Работал с медицинской документацией и нормативными актами Минздрава — требования к агенту формализовал с учётом регуляторных ограничений (152-ФЗ, врачебная тайна).</li>
-        <li>Результат: MVP запущен, среднее время приёма сократилось на 5 минут за счёт того, что анамнез собирается агентом до визита.</li>
+        <li>Проанализировал рынок агентов сбора анамнеза и сформировал скоуп MVP: отсёк фичи, не критичные для запуска, оставил то, что влияло на результат.</li>
+        <li>Спроектировал архитектуру сервиса совместно с разработчиками (UML, C4), формализовал функциональные и нефункциональные требования.</li>
+        <li>Занимался промптингом агента: пошаговый сценарий диалога, примеры по нозологиям, валидация терминов по справочнику МКБ-10 — это сократило время ответа и повысило точность собираемой информации.</li>
+        <li>Прогонял A/B-тесты на пользователях в разных сценариях и на разных моделях, чтобы выбрать рабочую конфигурацию перед раскаткой.</li>
+        <li>Требования к агенту формализовал с учётом регуляторных ограничений (152-ФЗ, врачебная тайна).</li>
+        <li>Результат: MVP запущен, среднее время приёма сократилось на 5 минут — анамнез собирается агентом до визита.</li>
       </ul>
     </div>
 
@@ -564,9 +511,9 @@ body {
       <div class="exp-title">Хакатон «Нефтекод» — ИТМО × Газпром нефть</div>
       <div class="exp-sub">2026 г.</div>
       <ul class="exp-list">
-        <li>Обучил CatBoost-регрессию для предсказания температуры смешения полимерно-битумных вяжущих (ПБВ) по составу и целевым параметрам эластичности и термостойкости. Гиперпараметры подбирал через Optuna (50 trials, 5-fold CV): это дало стабильное качество без переобучения на малой выборке.</li>
-        <li>Малый объём и дисбаланс данных компенсировал SMOTENC (imbalanced-learn) и ручным feature engineering на основе открытых исследований по рецептурам (производные от состава, нормализованные отношения компонент) — это дало модели сигнал, которого не было в исходных признаках.</li>
-        <li>Формализовал действующие ГОСТ-стандарты в измеримый порог качества: финальная модель предсказывала температуру с отклонением не больше 0.5°C от факта в 80% случаев (метрика — RMSE).</li>
+        <li>Обучил градиентный бустинг для предсказания температуры смешения полимерно-битумных вяжущих по составу и целевым параметрам. Гиперпараметры подбирал байесовской оптимизацией с кросс-валидацией — это дало стабильное качество без переобучения на малой выборке.</li>
+        <li>Малый объём и дисбаланс данных компенсировал SMOTENC и конструированием признаков на основе открытых исследований по рецептурам — модель получила сигнал, которого не было в исходных данных.</li>
+        <li>Формализовал ГОСТ-стандарты в измеримый порог качества: модель предсказывала температуру с отклонением не больше 0.5°C в 80% случаев.</li>
       </ul>
     </div>
 
@@ -575,10 +522,10 @@ body {
       <div class="exp-title">Хакатон RASCAR — «Boxing Action Recognition Challenge»</div>
       <div class="exp-sub">2026 г.</div>
       <ul class="exp-list">
-        <li>Обучал video-transformer на GPU-кластерах для распознавания ударов в боксёрских поединках: задача — найти момент удара и определить, какой спортсмен (red или blue) его нанёс.</li>
-        <li>Пайплайн построил по стандартной схеме action recognition: YOLOv8-pose для pose estimation (17 keypoints на кадр) → ByteTrack для трекинга бойцов и рефери → temporal transformer на последовательностях keypoints (окно 30 кадров = 1 сек) для классификации действия и определения момента удара.</li>
-        <li>Основной упор — на временной контекст, а не на классификацию отдельных кадров: помимо keypoints добавлял в фичи дистанцию между бойцами, скорость рук, угол корпуса. Это позволило отличать реальный удар от замаха, подготовки, защитного движения и клинча — именно на этом теряли очки конкуренты с покадровыми моделями.</li>
-        <li>Разделение спортсменов на red/blue делал по устойчивому треку, положению в кадре и поведению, а не по цвету экипировки — критично на тренировочных видео, где часть формы нейтральная, а в кадре присутствуют рефери и зрители. Постобработка событий — с учётом штрафа за ложные срабатывания (N_fp / (N_gt + N_fp)), чтобы не генерировать лишние удары на спокойных фрагментах.</li>
+        <li>Обучал видео-трансформер на GPU-кластерах для распознавания ударов в боксёрских поединках: найти момент удара и определить, какой спортсмен его нанёс.</li>
+        <li>Пайплайн построил по стандартной схеме распознавания действий: оценка позы по ключевым точкам, трекинг бойцов и рефери, затем временной трансформер на последовательностях ключевых точек.</li>
+        <li>Основной упор — на временной контекст, а не на отдельные кадры: добавлял дистанцию между бойцами, скорость рук, угол корпуса. Это позволило отличать реальный удар от замаха, подготовки и клинча — именно на этом теряли очки конкуренты с покадровыми моделями.</li>
+        <li>Разделение спортсменов по устойчивому треку, положению и поведению, а не по цвету экипировки — критично на тренировочных видео. Постобработку событий строил с учётом штрафа за ложные срабатывания, чтобы не генерировать лишние удары на спокойных фрагментах.</li>
       </ul>
     </div>
 
