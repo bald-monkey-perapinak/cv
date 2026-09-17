@@ -148,27 +148,26 @@ body {
 .exp-block {
   background: #2020E8;
   border-radius: 20px;
-  padding: 26px 30px;
-  margin-bottom: 18px;
+  padding: 22px 24px;
 }
 .exp-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   color: #fff;
   margin-bottom: 4px;
 }
 .exp-sub {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
   color: rgba(255,255,255,0.65);
   margin-bottom: 14px;
 }
 .exp-subtitle {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
   color: #fff;
   letter-spacing: 0.2px;
-  margin-top: 18px;
+  margin-top: 16px;
   margin-bottom: 10px;
   padding-bottom: 6px;
   border-bottom: 1px solid rgba(255,255,255,0.28);
@@ -185,8 +184,8 @@ body {
 }
 .exp-list li {
   position: relative;
-  padding-left: 20px;
-  font-size: 15px;
+  padding-left: 18px;
+  font-size: 14px;
   font-weight: 500;
   color: #fff;
   line-height: 1.5;
@@ -201,6 +200,27 @@ body {
   background: #fff;
   border-radius: 2px;
   opacity: 0.8;
+}
+
+/* ===== GRID ОПЫТА И ХАКАТОНОВ (работает и на экране, и в печати) ===== */
+.exp-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.exp-grid .exp-block {
+  flex: 1 1 calc(50% - 9px);
+  min-width: 0;
+  margin-bottom: 0;
+}
+.exp-grid .exp-full {
+  flex: 1 1 100%;
+}
+.exp-fullwidth {
+  flex-basis: 100%;
+  margin-bottom: 4px;
+  margin-top: 0;
 }
 
 /* GOAL BLOCK */
@@ -239,18 +259,13 @@ body {
 .section-gap {
   margin-bottom: 6px;
 }
-.exp-fullwidth {
-  flex-basis: 100%;
-  margin-bottom: 12px;
-  margin-top: 24px;
-}
 
 /* Обёртка секции — заголовок + контент вместе */
 .section-wrap {
   display: block;
 }
 
-/* ===== ПЕЧАТЬ — 1–2 СТРАНИЦЫ A4 ===== */
+/* ===== ПЕЧАТЬ ===== */
 @media print {
   @page {
     size: A4;
@@ -276,20 +291,17 @@ body {
     print-color-adjust: exact;
   }
 
-  /* --- Обёртка секции: заголовок + контент не разрываются --- */
   .section-wrap {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  /* --- Не разрывать контейнеры с текстом --- */
   .goal-block,
   .card {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  /* --- Мелкие элементы --- */
   .header,
   .card-list li,
   .exp-list li,
@@ -311,10 +323,6 @@ body {
   .exp-title {
     break-after: avoid;
     page-break-after: avoid;
-  }
-  .exp-grid {
-    break-inside: auto;
-    page-break-inside: auto;
   }
   .exp-block {
     break-inside: avoid;
@@ -347,27 +355,30 @@ body {
   .pills { gap: 4px; margin-top: 3px; }
   .pill { font-size: 9px; padding: 2px 6px; border-radius: 5px; }
 
+  /* Grid опыта/хакатонов в печати */
   .exp-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 6px;
-    margin-top: 4px;
+    gap: 10px;
+    margin-bottom: 8px;
+    margin-top: 2px;
   }
   .exp-grid .exp-block {
-    flex: 1 1 calc(50% - 4px);
+    flex: 1 1 calc(50% - 5px);
     min-width: 0;
     padding: 9px 11px;
-    margin-bottom: 0;
     border-radius: 12px;
+  }
+  .exp-grid .exp-full {
+    flex: 1 1 100%;
   }
   .exp-fullwidth {
     flex-basis: 100%;
-    margin-top: 4px;
-    margin-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 4px;
     font-size: 14px;
   }
-  .exp-title { font-size: 12px; margin-bottom: 2px; }
+  .exp-title { font-size: 11.5px; margin-bottom: 2px; }
   .exp-sub { font-size: 9px; margin-bottom: 6px; }
   .exp-subtitle {
     font-size: 10px;
@@ -377,7 +388,7 @@ body {
   }
   .exp-subtitle:first-child { margin-top: 0; }
   .exp-list { gap: 4px; }
-  .exp-list li { font-size: 9.5px; line-height: 1.35; padding-left: 12px; }
+  .exp-list li { font-size: 9.5px; line-height: 1.35; padding-left: 11px; }
   .exp-list li::before { width: 4.5px; height: 4.5px; top: 4px; }
 }
 </style>
@@ -420,7 +431,7 @@ body {
   <div class="exp-grid">
     <div class="section-title exp-fullwidth">Опыт работы</div>
 
-    <!-- Т-Банк -->
+    <!-- Т-Банк: Персонализация -->
     <div class="exp-block">
       <div class="exp-title">Т-Банк — Data Analyst (ML/LLM)</div>
       <div class="exp-sub">июль — сентябрь 2026 г.</div>
@@ -433,6 +444,12 @@ body {
         <li>Улучшал промпт и параметры генерации по кросс-валидации, добиваясь минимум одного «идеального» пуша из десяти.</li>
         <li>Раскатал A/B-тест на 500 тыс. пользователей (3 недели): значимый рост кликабельности на 10%; эффект воспроизвёлся на отложенном периоде.</li>
       </ul>
+    </div>
+
+    <!-- Т-Банк: Дайджест -->
+    <div class="exp-block">
+      <div class="exp-title">Т-Банк — Data Analyst</div>
+      <div class="exp-sub">июль — сентябрь 2026 г.</div>
 
       <div class="exp-subtitle">Дайджест по стратегическим партнёрам</div>
       <ul class="exp-list">
@@ -444,8 +461,8 @@ body {
       </ul>
     </div>
 
-    <!-- Клиника Скандинавия -->
-    <div class="exp-block">
+    <!-- Скандинавия — на всю ширину -->
+    <div class="exp-block exp-full">
       <div class="exp-title">Клиника Скандинавия — Product Manager</div>
       <div class="exp-sub">Агент сбора анамнеза до приёма · август 2025 — апрель 2026</div>
       <ul class="exp-list">
