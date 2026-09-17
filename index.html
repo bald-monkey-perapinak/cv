@@ -245,6 +245,11 @@ body {
   margin-top: 24px;
 }
 
+/* Обёртка секции — заголовок + контент вместе */
+.section-wrap {
+  display: block;
+}
+
 /* ===== ПЕЧАТЬ — 1–2 СТРАНИЦЫ A4 ===== */
 @media print {
   @page {
@@ -271,6 +276,20 @@ body {
     print-color-adjust: exact;
   }
 
+  /* --- Обёртка секции: заголовок + контент не разрываются --- */
+  .section-wrap {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* --- Не разрывать контейнеры с текстом --- */
+  .goal-block,
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* --- Мелкие элементы --- */
   .header,
   .card-list li,
   .exp-list li,
@@ -293,8 +312,6 @@ body {
     break-after: avoid;
     page-break-after: avoid;
   }
-  .goal-block,
-  .card,
   .exp-grid {
     break-inside: auto;
     page-break-inside: auto;
@@ -390,10 +407,12 @@ body {
   </div>
 
   <!-- О СЕБЕ -->
-  <div class="section-title section-gap">О себе</div>
-  <div class="goal-block">
-    <div class="goal-text">
-      Студент ИТМО («Инженерия искусственного интеллекта»), 1.5 года практики в ML и NLP. В <strong>Т-Банке</strong> строил пайплайны персонализации пуш-уведомлений и агентную систему извлечения данных по стратегическим партнёрам: от кластеризации и конструирования признаков до валидации LLM-оценщиков и A/B-тестов на 500k пользователей. Ищу позицию DS/ML/NLP-инженера.
+  <div class="section-wrap">
+    <div class="section-title section-gap">О себе</div>
+    <div class="goal-block">
+      <div class="goal-text">
+        Студент ИТМО («Инженерия искусственного интеллекта»), 1.5 года практики в ML и NLP. В <strong>Т-Банке</strong> строил пайплайны персонализации пуш-уведомлений и агентную систему извлечения данных по стратегическим партнёрам: от кластеризации и конструирования признаков до валидации LLM-оценщиков и A/B-тестов на 500k пользователей. Ищу позицию DS/ML/NLP-инженера.
+      </div>
     </div>
   </div>
 
@@ -443,78 +462,80 @@ body {
 
 
   <!-- ТЕХНИЧЕСКИЙ СТЕК -->
-  <div class="section-title section-gap">Технический стек</div>
-  <div class="card">
-    <ul class="card-list">
-      <li>
-        <div class="list-text">
-          <strong>Языки и данные</strong>
-          <span class="list-desc">
-            <div class="pills">
-              <span class="pill">Python</span>
-              <span class="pill">SQL</span>
-              <span class="pill">pandas</span>
-              <span class="pill">numpy</span>
-              <span class="pill">PostgreSQL</span>
-              <span class="pill">Redis</span>
-            </div>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="list-text">
-          <strong>Классический ML и DL</strong>
-          <span class="list-desc">
-            <div class="pills">
-              <span class="pill">scikit-learn</span>
-              <span class="pill">CatBoost</span>
-              <span class="pill">LightGBM</span>
-              <span class="pill">PyTorch</span>
-              <span class="pill">Optuna</span>
-            </div>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="list-text">
-          <strong>NLP</strong>
-          <span class="list-desc">
-            <div class="pills">
-              <span class="pill">лемматизация и NER</span>
-              <span class="pill">трансформерные модели</span>
-              <span class="pill">векторные представления</span>
-              <span class="pill">классификация текста</span>
-              <span class="pill">метрики: F1, precision, recall</span>
-            </div>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="list-text">
-          <strong>LLM-инструменты</strong>
-          <span class="list-desc">
-            <div class="pills">
-              <span class="pill">LangChain</span>
-              <span class="pill">LangGraph</span>
-              <span class="pill">структурированный вывод</span>
-              <span class="pill">few-shot и chain-of-thought</span>
-            </div>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="list-text">
-          <strong>Инфраструктура</strong>
-          <span class="list-desc">
-            <div class="pills">
-              <span class="pill">Git</span>
-              <span class="pill">Docker</span>
-              <span class="pill">FastAPI</span>
-            </div>
-          </span>
-        </div>
-      </li>
-    </ul>
+  <div class="section-wrap">
+    <div class="section-title section-gap">Технический стек</div>
+    <div class="card">
+      <ul class="card-list">
+        <li>
+          <div class="list-text">
+            <strong>Языки и данные</strong>
+            <span class="list-desc">
+              <div class="pills">
+                <span class="pill">Python</span>
+                <span class="pill">SQL</span>
+                <span class="pill">pandas</span>
+                <span class="pill">numpy</span>
+                <span class="pill">PostgreSQL</span>
+                <span class="pill">Redis</span>
+              </div>
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="list-text">
+            <strong>Классический ML и DL</strong>
+            <span class="list-desc">
+              <div class="pills">
+                <span class="pill">scikit-learn</span>
+                <span class="pill">CatBoost</span>
+                <span class="pill">LightGBM</span>
+                <span class="pill">PyTorch</span>
+                <span class="pill">Optuna</span>
+              </div>
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="list-text">
+            <strong>NLP</strong>
+            <span class="list-desc">
+              <div class="pills">
+                <span class="pill">лемматизация и NER</span>
+                <span class="pill">трансформерные модели</span>
+                <span class="pill">векторные представления</span>
+                <span class="pill">классификация текста</span>
+                <span class="pill">метрики: F1, precision, recall</span>
+              </div>
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="list-text">
+            <strong>LLM-инструменты</strong>
+            <span class="list-desc">
+              <div class="pills">
+                <span class="pill">LangChain</span>
+                <span class="pill">LangGraph</span>
+                <span class="pill">структурированный вывод</span>
+                <span class="pill">few-shot и chain-of-thought</span>
+              </div>
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="list-text">
+            <strong>Инфраструктура</strong>
+            <span class="list-desc">
+              <div class="pills">
+                <span class="pill">Git</span>
+                <span class="pill">Docker</span>
+                <span class="pill">FastAPI</span>
+              </div>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <!-- ХАКАТОНЫ -->
