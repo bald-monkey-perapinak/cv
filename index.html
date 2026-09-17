@@ -184,9 +184,8 @@ body {
   gap: 10px;
 }
 .exp-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  position: relative;
+  padding-left: 20px;
   font-size: 15px;
   font-weight: 500;
   color: #fff;
@@ -194,13 +193,13 @@ body {
 }
 .exp-list li::before {
   content: '';
-  display: block;
+  position: absolute;
+  left: 0;
+  top: 6px;
   width: 8px;
   height: 8px;
-  min-width: 8px;
   background: #fff;
   border-radius: 2px;
-  margin-top: 5px;
   opacity: 0.8;
 }
 /* Заголовки проектов внутри пунктов — над текстом */
@@ -412,15 +411,18 @@ body {
     font-size: 10px;
     margin-bottom: 8px;
   }
+  .exp-list {
+    gap: 6px;
+  }
   .exp-list li {
     font-size: 11px;
-    gap: 6px;
     line-height: 1.4;
+    padding-left: 14px;
   }
   .exp-list li::before {
     width: 6px;
     height: 6px;
-    margin-top: 3px;
+    top: 4px;
   }
   .skills-tag {
     font-size: 10px;
